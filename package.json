@@ -1,8 +1,25 @@
 {
   "name": "electron-react-app",
+  "description": "Electron + Create React App + Electron Builder",
+  "author" : {
+    "name": "Neil T"
+  },
+  "build" : {
+    "appId": "neveon/com.github",
+    "productName": "electron-react-app",
+    "copyright": "Copyright © 2020 Neil T",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -17,7 +34,11 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "rescripts eject",
-    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\""
+    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder",
+    "preelectron-pack": "npm build",
+    "electron-pack": "electron-builder . electron-react-app --platform linux --arch x64 --out dist/",
+    "deb64": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +61,8 @@
     "concurrently": "^5.2.0",
     "electron": "^9.1.0",
     "electron-builder": "^22.7.0",
+    "electron-installer-debian": "^3.1.0",
+    "typescript": "^3.9.6",
     "wait-on": "^5.1.0"
   }
 }
