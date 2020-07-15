@@ -12,37 +12,49 @@ const isDev = require("electron-is-dev");
 let mainWindow;
 
 function createWindow() {
-    // Define the applications' dimension
-    mainWindow = new BrowserWindow({ width: 900, height: 680 });
+  // Define the applications' dimension
+  mainWindow = new BrowserWindow({
+    width: 900,
+    height: 680,
+    show: false,
+    // nodeIntegration: true fixes 'require is not defined' error
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
+  // Determine what to render based on environment
+  mainWindow.loadURL(
+    isDev
+      ? "http://localhost:3000"
+      : `file://${path.join(__dirname, "../build/index.html")}`
+  );
 
-    // Determine what to render based on environment
-    mainWindow.loadURL(
-        isDev
-        ? "http://localhost:3000"
-        : `file://${path.join(__dirname, "../build/index.html")}`
-    );
+  // Create event to close window on close
+  mainWindow.on("closed", () => (mainWindow = null));
+
+  mainWindow.once("ready-to-show", () => {
+    mainWindow.show();
 
     // Show chrome developer tools when in dev environment
     if (isDev) {
-        mainWindow.webContents.openDevTools();
+      mainWindow.webContents.openDevTools();
     }
-    // Create event to close window on close
-    mainWindow.on("closed", () => (mainWindow = null));
+  });
 }
 
 // On launch create app window
 app.on("ready", createWindow);
 app.on("window-all-closed", () => {
-    // Based on which OS you are using
-    if (process.platform !== "linux") {
-        // Close app if OS not on linux
-        // Other OS can be added
-        app.quit();
-    }
+  // Based on which OS you are using
+  if (process.platform !== "linux") {
+    // Close app if OS not on linux
+    // Other OS can be added
+    app.quit();
+  }
 });
 
 app.on("activate", () => {
-    if (mainWindow !== null) {
-        createWindow();
-    }
+  if (mainWindow !== null) {
+    createWindow();
+  }
 });
