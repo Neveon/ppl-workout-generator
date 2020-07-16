@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Push from "./components/Push";
+import Pull from "./components/Pull";
+import Legs from "./components/Legs";
+import { Container } from "react-bootstrap";
+
+import { GlobalProvider } from "./context/State";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <Container className="text-center">
+        <h1 className="font-weight-bold">Push Pull Legs Workout Generator</h1>
+        <br />
+
+        <div className="description">
+          <p>You can generate a Push Pull or Leg day workout routine.</p>
+        </div>
+
+        <div>
+          <Push />
+          <br/>
+          
+         <Pull />
+          <br/> 
+          
+          <Legs />
+          <br/>
+        </div>
+      </Container>
+    </GlobalProvider>
   );
 }
 
