@@ -1,0 +1,50 @@
+{
+    "push": {
+        "shoulders": 
+            {
+                "compound":["Overhead Press", "Dumbbell Overhead Press", "Arnold Press"],
+                "isolate": ["Dumbbell Lateral Raise", "Dumbbell Front Lateral Raise", "Plate Front Lateral Raise", "Single Arm Machine Shoulder Press"]
+            },
+        "chest": 
+            {
+                "compound":["Bench Press", "Incline Bench Press", "Dumbbell Press", "Dumbbell Incline Press", "Pushups", "Chest Dips", "Incline Champagne Press"],
+                "isolate": ["Alternating Single Arm Pec Dec", "Pec Dec", "Cable Crossovers", "Incline Dumbbell Fly", "Decline Dumbbell Fly"]
+            },
+        "triceps": 
+            {
+                "compound":["Close-Grip Barbell Press", "Dips", "Skullcrushers", "Diamond Pushups"],
+                "isolate": ["Cable Pressdown", "Single Arm Cable Pressdown", "Overhead Cable Extension", "Overhead Dumbbell Extension"]
+            }
+    },
+
+    "pull": {
+        "shoulders": 
+            {
+                "compound":["Wide Grip Barbell Row", "Face Pulls"],
+                "isolate": ["Dumbbell Rear Delt Fly", "Reverse Pec Dec", "Seated Cable Wide Grip Rear Delt Row"]
+            },
+        "back": 
+            {
+                "compound":["Barbell Rows", "Underhand Barbell Rows", "Pullups", "Lat Pulldowns", "Dumbbell Rows", "Seated Cable Rows", "Dumbbell/Plate Shrugs", "T-Bar Rows"],
+                "isolate": ["Hyperextensions", "Single Arm Cable Lat Pull", "Single Arm Pulldown Machine"]
+            },
+        "biceps": 
+            {
+                "compound":["Chinups", "EZ Curl", "Barbell Curl"],
+                "isolate": ["Preacher Curls", "Cable Curls", "Hammer Curls"]
+            }
+    },
+
+    "legs": {
+        "quads": 
+            {
+                "compound":["Back Squat", "Lunges", "Goblet Squat", "Bulgarian Split Squat", "Leg Press"],
+                "isolate": ["Leg Extensions", "Single Leg Extensions", "Dumbbell Step ups"]
+            },
+        "hamstring": 
+            {
+                "compound":["Conventional Deadlift", "Romanian Deadlift"],
+                "isolate": ["Seated Hamstring Curl", "One Leg Lying Hamstring Curl", "Bodyweight Hamstring Curls"]
+            }
+    }
+}
