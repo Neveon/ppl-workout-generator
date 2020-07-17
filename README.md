@@ -1,7 +1,3 @@
-This project followed [this guide](https://dev.to/tesh254/how-to-build-electron-apps-with-react-36b)
-
-After cloning this repo, make sure to `npm install` the dependencies.
-
 # Available Scripts
 
 `npm run electron-dev` - This will start the electron react-app
