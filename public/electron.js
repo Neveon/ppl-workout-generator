@@ -9,6 +9,11 @@ const path = require("path");
 // serve the build or render the react app running on dev environment
 const isDev = require("electron-is-dev");
 
+// For mock REST API
+const { fork } = require("child_process");
+const ps = fork(`${__dirname}/server.js`);
+console.log(__dirname);
+
 let mainWindow;
 
 function createWindow() {
